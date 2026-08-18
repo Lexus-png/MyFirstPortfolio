@@ -1,0 +1,391 @@
+/* =========================================================================
+   Alex's Portfolio — "Flight Deck" theme
+   An aerospace-schematic aesthetic: blueprint navy, instrument amber,
+   monospace telemetry labels, and corner-bracket panels borrowed from
+   HUD / targeting-frame conventions. Built for the existing markup —
+   no classes required.
+   ========================================================================= */
+
+/* ---------- Design tokens ---------- */
+:root {
+    /* Color */
+    --navy-950: #0a1628;   /* deep aerospace night, page background */
+    --navy-900: #0f1e34;   /* panel background */
+    --navy-800: #16263f;   /* panel border / hairline */
+    --steel-500: #7c93b3;  /* secondary text, muted steel-blue */
+    --paper-100: #e8ece9;  /* blueprint-paper off-white, primary text */
+    --amber-500: #ffb020;  /* instrument amber, signature accent */
+    --amber-400: #ffc659;  /* amber hover */
+    --amber-950: #2a1c04;  /* amber text-on-amber */
+
+    /* Type */
+    --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+    --font-body: "Inter", "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+    /* Scale */
+    --step-body: clamp(1rem, 0.95rem + 0.2vw, 1.0625rem);
+    --step-h1: clamp(2.5rem, 1.9rem + 3vw, 4.5rem);
+    --step-h2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    --step-h3: clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
+    --step-h4: 1.05rem;
+    --step-h5: 0.95rem;
+
+    /* Layout */
+    --content-w: 52rem;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+    --radius: 2px;
+
+    /* Motion */
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: local("Space Grotesk");
+    font-display: swap;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+    margin: 0;
+    background-color: var(--navy-950);
+    background-image:
+        linear-gradient(var(--navy-900) 1px, transparent 1px),
+        linear-gradient(90deg, var(--navy-900) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: center top;
+    color: var(--paper-100);
+    font-family: var(--font-body);
+    font-size: var(--step-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+ul { list-style: none; margin: 0; padding: 0; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+    outline: 2px solid var(--amber-500);
+    outline-offset: 3px;
+    border-radius: var(--radius);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* ---------- Header / Nav ---------- */
+header[role="banner"] {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(10, 22, 40, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--navy-800);
+}
+
+header[role="banner"]::before {
+    content: "AWARADIA / PORTFOLIO — REV. " attr(data-rev);
+    display: none; /* label reserved for future data-rev attribute */
+}
+
+nav[role="navigation"] {
+    max-width: 72rem;
+    margin-inline: auto;
+    padding: 0.9rem var(--gutter);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+nav[role="navigation"] button {
+    background: transparent;
+    border: 1px solid var(--navy-800);
+    color: var(--steel-500);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.55rem 1rem;
+    cursor: pointer;
+    transition: border-color 0.2s var(--ease), color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+nav[role="navigation"] button:hover {
+    border-color: var(--amber-500);
+    color: var(--amber-500);
+}
+
+nav[role="navigation"] button:first-child {
+    color: var(--paper-100);
+    border-color: var(--steel-500);
+}
+
+/* ---------- Main layout ---------- */
+main[role="main"] {
+    max-width: var(--content-w);
+    margin-inline: auto;
+    padding: clamp(3rem, 8vw, 6rem) var(--gutter) 5rem;
+    counter-reset: section;
+}
+
+/* Hero */
+main > h1 {
+    font-family: var(--font-display);
+    font-size: var(--step-h1);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.75rem;
+    position: relative;
+    padding-top: 1.75rem;
+}
+
+/* Eyebrow above the name, telemetry-style */
+main > h1::before {
+    content: "ENGINEER \2014 AEROSPACE SYSTEMS";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--amber-500);
+}
+
+main > h1 + p {
+    font-size: clamp(1.05rem, 1rem + 0.4vw, 1.3rem);
+    color: var(--steel-500);
+    max-width: 34rem;
+    margin: 0 0 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px dashed var(--navy-800);
+}
+
+/* ---------- Section headings (h2–h5) get a schematic index ---------- */
+main h2,
+main h3,
+main h4,
+main h5 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--paper-100);
+    margin: 3rem 0 1.25rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+main h2::before,
+main h3::before,
+main h4::before,
+main h5::before {
+    counter-increment: section;
+    content: "SEC." counter(section, decimal-leading-zero);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--amber-500);
+    white-space: nowrap;
+}
+
+main h2 { font-size: var(--step-h2); }
+main h3 { font-size: var(--step-h3); color: var(--steel-500); }
+main h4 { font-size: var(--step-h4); }
+main h5 { font-size: var(--step-h5); }
+
+/* ---------- Lists as one continuous bracket-framed panel ----------
+   Each topic in the source markup is a run of separate <ul><li> pairs.
+   Style every ul as a panel row and collapse the seams between
+   consecutive lists so the run reads as a single instrument panel. */
+main ul {
+    position: relative;
+    background: var(--navy-900);
+    border: 1px solid var(--navy-800);
+    border-top: none;
+    padding: 0;
+}
+
+main ul:first-of-type,
+main h2 + ul,
+main h3 + ul,
+main h4 + ul,
+main h5 + ul {
+    border-top: 1px solid var(--navy-800);
+}
+
+/* Corner-bracket marks — the signature motif — on the first list
+   in each run and reinforced on the last */
+main h2 + ul::before,
+main h3 + ul::before,
+main h4 + ul::before,
+main h5 + ul::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+    background-image:
+        linear-gradient(var(--amber-500), var(--amber-500)),
+        linear-gradient(var(--amber-500), var(--amber-500)),
+        linear-gradient(var(--amber-500), var(--amber-500)),
+        linear-gradient(var(--amber-500), var(--amber-500));
+    background-repeat: no-repeat;
+    background-size: 14px 2px, 2px 14px, 14px 2px, 2px 14px;
+    background-position: top left, top left, top right, top right;
+}
+
+main ul li {
+    font-family: var(--font-body);
+    padding: 0.85rem 1.25rem;
+    border-left: 2px solid var(--navy-800);
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+main ul + ul li {
+    border-top: 1px solid var(--navy-800);
+}
+
+main ul li::before {
+    content: "\2022";
+    position: absolute;
+    left: 1.1rem;
+    color: var(--amber-500);
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+/* Target-audience run (h3) reads as a 3-up grid of cards rather than rows */
+main h3 + ul,
+main h3 + ul + ul,
+main h3 + ul + ul + ul {
+    display: inline-grid;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    main h3 + ul ~ ul { border-top: 1px solid var(--navy-800) !important; }
+}
+
+/* ---------- Figure / photo plate ---------- */
+main img {
+    margin: 2.5rem 0;
+    padding: 14px;
+    background:
+        linear-gradient(var(--amber-500), var(--amber-500)) top left / 22px 2px no-repeat,
+        linear-gradient(var(--amber-500), var(--amber-500)) top left / 2px 22px no-repeat,
+        linear-gradient(var(--amber-500), var(--amber-500)) bottom right / 22px 2px no-repeat,
+        linear-gradient(var(--amber-500), var(--amber-500)) bottom right / 2px 22px no-repeat,
+        var(--navy-900);
+    border: 1px solid var(--navy-800);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 26rem;
+}
+
+/* ---------- Buttons & CTAs ---------- */
+main > button,
+main > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 1.6rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: transform 0.15s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+main > button {
+    background: transparent;
+    border: 1px solid var(--steel-500);
+    color: var(--paper-100);
+    margin: 2.5rem 1rem 0 0;
+}
+
+main > button:hover {
+    border-color: var(--amber-500);
+    color: var(--amber-500);
+}
+
+main > a {
+    background: var(--amber-500);
+    border: 1px solid var(--amber-500);
+    color: var(--amber-950);
+    font-weight: 600;
+    margin-top: 2.5rem;
+}
+
+main > a::after {
+    content: "\2192";
+}
+
+main > a:hover {
+    background: var(--amber-400);
+    border-color: var(--amber-400);
+    transform: translateY(-1px);
+}
+
+/* ---------- Aside ---------- */
+aside[role="complementary"] {
+    max-width: 72rem;
+    margin-inline: auto;
+    padding: 0 var(--gutter);
+}
+
+aside[role="complementary"]:empty { display: none; }
+
+/* ---------- Footer ---------- */
+footer[role="contentinfo"] {
+    border-top: 1px solid var(--navy-800);
+    padding: 2rem var(--gutter);
+    text-align: center;
+}
+
+footer[role="contentinfo"] p {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    color: var(--steel-500);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+    nav[role="navigation"] {
+        justify-content: flex-start;
+    }
+    nav[role="navigation"] button {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+    main > h1 {
+        padding-top: 1.5rem;
+    }
+    main > button,
+    main > a {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-right: 0;
+    }
+}
