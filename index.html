@@ -1,95 +1,715 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Short page description">
-    <title>Alex's portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
-    <link rel="icon" href="logo.png" type="image/x-icon">
+    <meta name="description"
+        content="Awaradia Alexis — Aerospace engineering enthusiast, tech creative, writer and artist.">
 
-    <!-- Styles -->
+    <meta name="author" content="Awaradia Alexis">
+
+    <title>Awaradia Alexis | Aerospace • Tech • Creativity</title>
+
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Open Graph (optional) -->
-    <meta property="og:title" content="Page Title">
-    <meta property="og:description" content="Short page description">
-    <meta property="og:image" content="/og-image.png">
-    <meta property="og:type" content="website">
 </head>
 
 <body>
-    <header role="banner">
-        <nav role="navigation" aria-label="Main navigation">
-            <button>Home</button>
-            <button> About Me</button>
-            <button>Contact Me</button>
 
-            <!-- Add more links -->
+    <!-- Background decoration -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            <span>AA</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#journey">Journey</a>
+            <a href="#creative">Creative Side</a>
+            <a href="#contact">Contact</a>
         </nav>
+
+        <a href="#contact" class="nav-button">
+            Let's Talk
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
     </header>
 
-    <main id="main" role="main">
-        <h1>Awaradia Alexis</h1>
-        <p>I'm an engineer by heart & cash.</p>
-        <!--Some interests are-->
-        <h2>Objectives</h2>
-        <ul>
-            <li> I build efficient and up to date aeromachines</li>
-        </ul>
-        <ul>
-            <li>If you can think it, I can build it</li>
-        </ul>
-        <h3> Target Audience</h3>
-        <ul>
-            <li>Entrepreuneurs</li>
-        </ul>
-        <ul>
-            <li>Business Associates</li>
-        </ul>
-        <ul>
-            <li>Aerospace Companies</li>
-        </ul>
-        <h4>Some Facts About Me</h4>
-        <ul>
-            <li>I'm a tech intern</li>
-        </ul>
-        <ul>
-            <li>Pursuing my career in aerospace engineering</li>
-        </ul>
-        <img src="image.png" alt="Rocket Photo">
-        <h5>What You Get</h5>
-        <ul>
-            <li>Tenacity</li>
-        </ul>
-        <ul>
-            <li>Accuracy</li>
-        </ul>
-        <ul>
-            <li>Efficiency</li>
-        </ul>
 
-        <button>Suggestion Box</button>
-        <a href="https://projects.com">View My projects</a>
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    <span></span>
+                    AEROSPACE • TECHNOLOGY • CREATIVITY
+                </p>
+
+                <h1>
+                    Dream big.
+                    <br>
+                    <em>Build bigger.</em>
+                </h1>
+
+                <p class="hero-description">
+                    I'm <strong>Awaradia Alexis</strong> — an aspiring aerospace
+                    engineer, tech enthusiast and creative soul who believes
+                    ordinary ideas are simply waiting for someone bold enough
+                    to turn them into reality.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#about" class="primary-button">
+                        Discover My World
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+
+                    <a href="#contact" class="secondary-button">
+                        Get In Touch
+                    </a>
+
+                </div>
+
+                <div class="social-links">
+
+                    <a href="#" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="image-frame">
+
+                    <div class="image-decoration"></div>
+
+                    <img src="image.png" alt="Aerospace rocket">
+
+                    <div class="floating-card card-top">
+                        <span class="card-icon">
+                            <i class="fa-solid fa-rocket"></i>
+                        </span>
+
+                        <div>
+                            <strong>Future</strong>
+                            <small>In the making</small>
+                        </div>
+                    </div>
+
+
+                    <div class="floating-card card-bottom">
+
+                        <div class="mini-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+
+                        <div>
+                            <strong>Tech Bootcamp</strong>
+                            <small>Just getting started</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MARQUEE ================= -->
+
+        <section class="marquee-section">
+
+            <div class="marquee">
+
+                <span>AEROSPACE ENGINEERING</span>
+                <i class="fa-solid fa-star"></i>
+
+                <span>TECHNOLOGY</span>
+                <i class="fa-solid fa-star"></i>
+
+                <span>CREATIVITY</span>
+                <i class="fa-solid fa-star"></i>
+
+                <span>BIG DREAMS</span>
+                <i class="fa-solid fa-star"></i>
+
+                <span>AEROSPACE ENGINEERING</span>
+                <i class="fa-solid fa-star"></i>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="about section" id="about">
+
+            <div class="section-label">
+                <span>01</span>
+                ABOUT ME
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-heading">
+
+                    <h2>
+                        More than an engineer.
+                        <br>
+                        <em>I'm a creator.</em>
+                    </h2>
+
+                </div>
+
+                <div class="about-text">
+
+                    <p>
+                        I'm passionate about understanding how things work,
+                        building things that matter and pushing myself beyond
+                        what people expect.
+                    </p>
+
+                    <p>
+                        My journey is currently taking me toward aerospace
+                        engineering, while technology has opened another
+                        exciting door. I recently attended a <strong>summer
+                        tech bootcamp</strong>, expanding my skills and
+                        discovering even more ways to turn ideas into reality.
+                    </p>
+
+                    <p>
+                        But there's more to me than equations and technology.
+                        I'm also a storyteller, painter, dancer and baker.
+                        Creativity follows me everywhere I go.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PERSONALITY ================= -->
+
+        <section class="personality">
+
+            <div class="personality-content">
+
+                <p class="eyebrow">THE ENERGY</p>
+
+                <h2>
+                    Outgoing.
+                    <span>Fierce.</span>
+                    Daring.
+                </h2>
+
+                <p>
+                    I don't wait for permission to chase the things I want.
+                    I experiment, I create, I fail, I learn and I keep moving.
+                </p>
+
+                <div class="quote">
+                    <i class="fa-solid fa-quote-left"></i>
+
+                    <p>
+                        Too glam to give a damn.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= JOURNEY ================= -->
+
+        <section class="journey section" id="journey">
+
+            <div class="section-label">
+                <span>02</span>
+                MY JOURNEY
+            </div>
+
+            <div class="journey-heading">
+
+                <h2>
+                    Curiosity became
+                    <em>direction.</em>
+                </h2>
+
+                <p>
+                    Every experience adds another layer to the person
+                    I'm becoming.
+                </p>
+
+            </div>
+
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="timeline-number">01</div>
+
+                    <div class="timeline-content">
+
+                        <span>EXPLORATION</span>
+
+                        <h3>Aerospace Engineering</h3>
+
+                        <p>
+                            Pursuing a future in aerospace engineering with
+                            an obsession for machines, innovation and the
+                            possibilities of flight.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-number">02</div>
+
+                    <div class="timeline-content">
+
+                        <span>TECH</span>
+
+                        <h3>Summer Tech Bootcamp</h3>
+
+                        <p>
+                            Recently stepped into the world of technology
+                            through a summer tech bootcamp, sharpening my
+                            digital skills and expanding my perspective.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-number">03</div>
+
+                    <div class="timeline-content">
+
+                        <span>WHAT'S NEXT</span>
+
+                        <h3>Build. Create. Innovate.</h3>
+
+                        <p>
+                            The goal isn't simply to have a career.
+                            It's to create work that makes people stop,
+                            think and say: "Damn, that's impressive."
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CREATIVE SIDE ================= -->
+
+        <section class="creative section" id="creative">
+
+            <div class="section-label">
+                <span>03</span>
+                BEYOND ENGINEERING
+            </div>
+
+            <div class="creative-header">
+
+                <h2>
+                    My brain likes
+                    <br>
+                    <em>to create.</em>
+                </h2>
+
+                <p>
+                    Engineering gives me structure.
+                    Creativity gives me freedom.
+                </p>
+
+            </div>
+
+
+            <div class="creative-grid">
+
+                <article class="creative-card">
+
+                    <div class="creative-icon">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+
+                    <span>01</span>
+
+                    <h3>Painting</h3>
+
+                    <p>
+                        Turning blank canvases into something alive,
+                        expressive and completely mine.
+                    </p>
+
+                </article>
+
+
+                <article class="creative-card featured">
+
+                    <div class="creative-icon">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+
+                    <span>02</span>
+
+                    <h3>Writing</h3>
+
+                    <p>
+                        Novels, stories and random ideas that refuse to
+                        stay inside my head.
+                    </p>
+
+                </article>
+
+
+                <article class="creative-card">
+
+                    <div class="creative-icon">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+
+                    <span>03</span>
+
+                    <h3>Dancing</h3>
+
+                    <p>
+                        Because sometimes the best way to express yourself
+                        isn't through words.
+                    </p>
+
+                </article>
+
+
+                <article class="creative-card">
+
+                    <div class="creative-icon">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+
+                    <span>04</span>
+
+                    <h3>Baking</h3>
+
+                    <p>
+                        A little science, a little creativity and a very
+                        delicious result.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= VALUES ================= -->
+
+        <section class="values section">
+
+            <div class="section-label">
+                <span>04</span>
+                WHAT I BRING
+            </div>
+
+            <div class="values-grid">
+
+                <div class="value">
+
+                    <span>01</span>
+
+                    <h3>Tenacity</h3>
+
+                    <p>
+                        I don't quit just because something gets difficult.
+                    </p>
+
+                </div>
+
+
+                <div class="value">
+
+                    <span>02</span>
+
+                    <h3>Precision</h3>
+
+                    <p>
+                        Details matter. Especially when you're building
+                        things that have to work.
+                    </p>
+
+                </div>
+
+
+                <div class="value">
+
+                    <span>03</span>
+
+                    <h3>Creativity</h3>
+
+                    <p>
+                        I approach problems from different angles and
+                        enjoy finding unconventional solutions.
+                    </p>
+
+                </div>
+
+
+                <div class="value">
+
+                    <span>04</span>
+
+                    <h3>Audacity</h3>
+
+                    <p>
+                        Big goals require the courage to actually chase them.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="contact section" id="contact">
+
+            <div class="contact-box">
+
+                <p class="eyebrow">
+                    HAVE AN IDEA?
+                </p>
+
+                <h2>
+                    Let's build something
+                    <em>extraordinary.</em>
+                </h2>
+
+                <p>
+                    Whether it's technology, aerospace, creativity or a
+                    completely crazy idea — I'm always open to interesting
+                    conversations and exciting opportunities.
+                </p>
+
+                <a href="mailto:your@email.com" class="primary-button">
+                    Say Hello
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </div>
+
+        </section>
 
     </main>
 
-    <aside role="complementary" aria-label="Sidebar">
-        <!-- Optional sidebar content -->
-    </aside>
 
-    <footer role="contentinfo">
-        <p>&copy; <span id="year"></span> Endless Opportunities</p>
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+
+                <a href="#home" class="logo">
+                    <span>AA</span>
+                </a>
+
+                <p>
+                    Engineering dreams.
+                    Creating possibilities.
+                </p>
+
+            </div>
+
+
+            <div class="footer-socials">
+
+                <a href="#">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="year"></span> Awaradia Alexis.
+                All rights reserved.
+            </p>
+
+            <p>
+                Too glam to give a damn ✦
+            </p>
+
+        </div>
+
     </footer>
 
-    <!-- Scripts -->
-    <script>
-        // Example: set current year
-        document.getElementById('year').textContent = new Date().getFullYear();
+
+    <!-- <script src="app.js"> -->
+        /* ===============================
+   Mobile Navigation
+================================ */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+
+    const icon = menuToggle.querySelector("i");
+
+    if (navLinks.classList.contains("show")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+    } else {
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+    }
+});
+
+
+/* ===============================
+   Close mobile menu after click
+================================ */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("show");
+
+        const icon = menuToggle.querySelector("i");
+
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+
+    });
+
+});
+
+
+/* ===============================
+   Current Year
+================================ */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* ===============================
+   Active Navigation Link
+================================ */
+
+const sections = document.querySelectorAll("section[id]");
+const navigationLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navigationLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+        }
+
+    });
+
+});
     </script>
-    <script src="app.js" defer></script>
+
 </body>
 
 </html>
